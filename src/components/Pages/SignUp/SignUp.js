@@ -32,15 +32,23 @@ function SignUp({history}) {
     }, [history]);
 
     return (
-        <div>
-            <h1>Sign Up</h1>
+        <div className="container">
             <form onSubmit={handleSignUp}>
-                <label>
-                    <input name="email" type="email" placeholder="Email" />
-                </label><label>
-                    <input name="password" type="password" placeholder="password"/>
-                </label>
-                <button type="submit">Sign Up</button>
+                <fieldset>
+                    <legend>Sign Up</legend>
+                    <p>Please fill in this form to create an account.</p>
+                    <div>
+                        <label>Email</label>
+                        <input name="email" type="email" placeholder="Email"/>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input name="password" type="password" placeholder="Password"/>
+                    </div>
+                    <div className="clearfix">
+                        <button type="submit">Sign Up</button>
+                    </div>
+                </fieldset>
             </form>
         </div>
     );

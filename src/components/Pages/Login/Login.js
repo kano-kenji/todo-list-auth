@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { Redirect, withRouter } from "react-router";
 import app from "../../Firebase/base";
 import { AuthContext } from "../../Security/AuthProvader/AuthProvader";
@@ -30,24 +30,30 @@ function Login({history}) {
 
     //Take an user from AuthContext and check it. If it available, then make a redirect to home page.
     const currentUser = useContext(AuthContext);
-    if(currentUser){
-        return <Redirect to="" />
+    if(currentUser) {
+        return <Redirect to="" />;
     }
 
     return (
-        <div>
-            <h1>Log In</h1>
-            <form onSubmit={handleLogin}>
-                <label>
-                    Email
-                    <input name="email" type="email" placeholder="Email"/>
-                </label>
-                <label>
-                    Password
-                    <input name="password" type="password" placeholder="Password"/>
-                </label>
-                <button type="submit">Log In</button>
-            </form>
+        <div className="row">
+            <div className="container">
+                <form onSubmit={handleLogin}>
+                    <fieldset>
+                        <legend>Log in</legend>
+                        <div>
+                            <label>Email</label>
+                            <input name="email" type="email" placeholder="Email" />
+                        </div>
+                        <div>
+                            <label>Password</label>
+                            <input name="password" type="password" placeholder="Password" />
+                        </div>
+                        <div className="clearfix">
+                            <button type="submit">Log In</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         </div>
     );
 }
