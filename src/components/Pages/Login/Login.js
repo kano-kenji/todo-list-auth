@@ -19,7 +19,7 @@ function Login({history}) {
             // And another AUTH process can't be start same process in this time
             await app
                 .auth()
-                .signInWithEmailAndPassword(email.target.value, password.target.value);
+                .signInWithEmailAndPassword(email.value, password.value);
 
             //Make a redirect to the home page after successfully log in
             history.push("/");
