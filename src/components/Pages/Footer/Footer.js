@@ -1,14 +1,11 @@
 import React from 'react';
 
 function Footer(){
-
-    const copyright = 'Copyright © ' + (new Date()).getFullYear() + ' Alexander Tarasevich.';
-
     return (
         <div className="footer">
             <p className="copyright">
-                {copyright}
-                <a href="https://github.com/kano-kenji/todo-list-auth">Git hub</a>
+                Copyright © {new Date().getFullYear()} &nbsp;
+                <a href="https://github.com/kano-kenji/todo-list-auth">Alexander Tarasevich</a>
             </p>
         </div>
     );
