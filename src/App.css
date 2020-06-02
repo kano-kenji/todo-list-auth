@@ -212,6 +212,10 @@ button:hover {
   width: 100%;
 }
 
+.footer a {
+  text-decoration: none;
+}
+
 /* Create three equal columns that floats next to each other */
 .column {
   float: left;
