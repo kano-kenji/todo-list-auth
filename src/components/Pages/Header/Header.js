@@ -20,7 +20,7 @@ function Header({history}) {
         <div className="header">
             <div className="logo">
                 <img src={Logo} alt="ReactJS/Redux" />
-                <h1>ToDo List</h1>
+                <h1><Link to="/">ToDo List</Link></h1>
                 <p>To do List for everyday</p>
             </div>
             <div className="topnav">
