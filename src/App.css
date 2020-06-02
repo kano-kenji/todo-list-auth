@@ -5,6 +5,14 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+
+  height: 100%;
+  min-width:900px;
+}
+
+html {
+  position:relative;
+  min-height:100%;
 }
 
 /* Style the header */
@@ -198,8 +206,11 @@ button:hover {
 /* Style the footer */
 .footer {
   background-color: #f1f1f1;
-  padding: 10px 0 1px 0;
   text-align: center;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 /* Create three equal columns that floats next to each other */
