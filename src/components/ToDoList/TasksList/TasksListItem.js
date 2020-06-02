@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 
-function ToDosListItem(props) {
+function TasksListItem(props) {
+    const completedStyle = {
+        textDecoration: 'line-through'
+    };
+
     const [toDo, setToDo] = useState(props.toDo);
 
     const onUpdateToDo = () => {
@@ -17,10 +21,10 @@ function ToDosListItem(props) {
                    value={toDo.isDone}
                    onChange={(e) => setToDo({...toDo, isDone: e.target.checked})}
             />
-            <span className="spn-li">{toDo.name}</span>
+            <span className={toDo.isDone ? "spn-li completed" : "spn-li"}>{toDo.name}</span>
             <i className="dlt-li" onClick={onDeleteToDo}>X</i>
         </li>
     );
 };
 
-export default ToDosListItem;
+export default TasksListItem;

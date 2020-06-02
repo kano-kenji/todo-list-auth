@@ -13,7 +13,7 @@ function Header({history}) {
         await app
             .auth()
             .signOut();
-        history.push("/login");
+        history.push("/");
     }, [history]);
 
     return (
@@ -21,12 +21,15 @@ function Header({history}) {
             <div className="logo">
                 <img src={Logo} alt="ReactJS/Redux" />
                 <h1>ToDo List</h1>
-                <p>What do you need to do today?</p>
+                <p>To do List for everyday</p>
             </div>
             <div className="topnav">
                 {
                     currentUser ?
-                        <Link className='menu-item' onClick={handleLogout} to="/">Sign Out</Link>
+                        <>
+                            <Link className='menu-item' onClick={handleLogout} to="/">Sign Out</Link>
+                            <span>{currentUser.email}</span>
+                        </>
                         :
                         (
                             history.location.pathname === "/login" ?

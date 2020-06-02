@@ -1,12 +1,12 @@
 import React from 'react';
-import ToDosListItem from "./ToDosListItem";
+import TasksListItem from "./TasksListItem";
 
-function ToDosList(props) {
+function TasksList(props) {
     return (
         <div className="container">
             <ul>
                 {props.toDos.map(el =>
-                    <ToDosListItem key={el.id}
+                    <TasksListItem key={el.id}
                                    toDo={el}
                                    onUpdateToDo={props.onUpdateToDo}
                                    onDeleteToDo={props.onDeleteToDo}
@@ -17,4 +17,4 @@ function ToDosList(props) {
     );
 };
 
-export default ToDosList;
+export default TasksList;

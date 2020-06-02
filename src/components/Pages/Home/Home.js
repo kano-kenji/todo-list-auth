@@ -1,44 +1,29 @@
-import React, {useState} from 'react';
-import CreateTodoForm from "./CreateToDoForm/CreateTodoForm";
-import ToDosList from "./ToDosList/ToDosList";
+import React, {useContext} from 'react';
+import ToDoList from "../../ToDoList/ToDoList/ToDoList";
+import {AuthContext} from "../../Security/AuthProvader/AuthProvader";
+import {Link} from "react-router-dom";
 
 function Home() {
 
-    const [toDos, setToDos] = useState([]);
-
-    const onCreateToDo = (toDo) => {
-        setToDos([...toDos, toDo]);
-    }
-
-    const onUpdateToDo = (toDo) => {
-        const updateToDos = toDos.map(el => {
-            if( el.id === toDo.id){
-                return {...el, toDo}
-            } else {
-                return el;
-            }
-        });
-        setToDos(updateToDos);
-    }
-
-    const onDeleteToDo = (toDo) => {
-        const newToDos = toDos.filter(el => el.id !== toDo.id);
-        setToDos(newToDos);
-    }
+    const currentUser = useContext(AuthContext);
 
     return (
         <div className="row">
             <div className="column side">
                 <h2>Date:</h2>
-                <p>Date list</p>
+                <p>Under construction...</p>
             </div>
             <div className="column middle">
                 <h2>Today is {new Date().toLocaleDateString()}</h2>
-                <CreateTodoForm onCreateToDo={onCreateToDo} />
-                <ToDosList toDos={toDos}
-                           onUpdateToDo={onUpdateToDo}
-                           onDeleteToDo={onDeleteToDo}
-                />
+                {
+                    currentUser ?
+                        <ToDoList currentUser={currentUser}/>
+                        :
+                        <p>
+                            For working with to do list
+                            please <Link to="/login">login</Link> or <Link to="/signup">register</Link>.
+                        </p>
+                }
             </div>
             <div className="column side">
                 <p>Here can be your advertisement</p>

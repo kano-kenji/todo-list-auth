@@ -5,7 +5,7 @@ function CreateTodoForm(props) {
 
     const onCreateToDo = (event) => {
         event.preventDefault();
-        const toDo = {id: Math.random(), name: name, isDone: false};
+        const toDo = {id: Math.random(), user: props.user.email, date: new Date().getTime(), name: name, isDone: false};
         props.onCreateToDo(toDo);
         setName('');
     }
