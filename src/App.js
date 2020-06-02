@@ -14,8 +14,9 @@ function App() {
         <AuthProvider>
             <Router>
                 <Header />
+                <Home />
                 {/*<PrivateRoute exact path="/" component={Home} />*/}
-                <Route exact path="/" component={Home} />
+                {/*<Route exact path="/" component={Home} />*/}
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={SignUp} />
                 <Footer />
