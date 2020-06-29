@@ -5,7 +5,6 @@ import { AuthContext } from "../../Security/AuthProvader/AuthProvader";
 
 function Login({history}) {
     //Hook useCallback for memoized data. Like as useMemo().
-    // The Async keyword means what we will be use synchronization as in Java language. Bellow we use await keyword with this async.
     const handleLogin = useCallback( async event =>{
         //This method preventDefault doesn't let to reload a page after submitting
         event.preventDefault();
@@ -15,8 +14,6 @@ function Login({history}) {
 
         try{
             //Log in to system with a signInWithEmailAndPassword method from the firebase API.
-            //The await keyword means what we will be waiting finish this process.
-            // And another AUTH process can't be start same process in this time
             await app
                 .auth()
                 .signInWithEmailAndPassword(email.value, password.value);
